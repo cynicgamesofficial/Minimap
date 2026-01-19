@@ -1,0 +1,11 @@
+
+class UCM_TimeFreezer : PowerTimeFreezer
+{
+	Default
+	{
+		+INVENTORY.AUTOACTIVATE
+		+INVENTORY.UNDROPPABLE
+		Powerup.Duration 0x7FFFFFFF;
+	}
+}
+

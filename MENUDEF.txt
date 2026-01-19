@@ -2,13 +2,13 @@
 AddOptionMenu "OptionsMenu"
 {
 	StaticText " "
-	Submenu "UCMinimap Options", "UCMOptions"
+	Submenu "Minimap", "UCMOptions"
 }
 
 
 OptionMenu "UCMOptions"
 {
-   Title "UCMinimap HUD Options"
+   Title "Minimap"
    SubMenu "Controls", "UCMControls"
    SubMenu "Switch Options", "UCMOptions_Switches"
    StaticText " "
@@ -37,18 +37,21 @@ OptionMenu "UCMOptions"
    StaticText " "
    StaticText "Minimap", "Gold"
    Option "Enabled", "ucm_drawmap", "YesOrNo"
+   Option "Omniscience (Show All Lines)", "ucm_omniscience", "YesOrNo"
    Option "Rotate with Player", "ucm_drawrotation", "YesOrNo"
-   Slider "Minimap Render Distance", "ucm_maprenderdist", 128, 8192, 1, 0 
+   Slider "Minimap Render Distance", "ucm_maprenderdist", 128, 8192, 1, 0
+   Slider "Fullscreen Zoom Multiplier", "ucm_fullscreenzoom", 0.1, 5.0, 0.01, 2 
    SubMenu "Map Colors", "UCMOptions_Colors"
    StaticText " "
    StaticText "Waypoint Options", "Gold"
-   Option "Mark Map \"Start\" and \"Exit\"", "ucm_markstartexit", "YesOrNo"
+   Option "Mark Start", "ucm_markstart", "YesOrNo"
+   Option "Mark Exit", "ucm_markexit", "YesOrNo"
    StaticText " "
 }
 
 OptionMenu "UCMOptions_Alignment"
 {
-	 Title "UCMinimap HUD Options -> Map Positioning"
+	 Title "Minimap -> Map Positioning"
 	 StaticText " "
 	 Command "Top Left", "netevent \"align.upperleft\""
 	 Command "Top Right", "netevent \"align.upperright\""
@@ -58,7 +61,7 @@ OptionMenu "UCMOptions_Alignment"
 
 OptionMenu "UCMOptions_Colors"
 {
-   Title "UCMinimap HUD Options -> Map Colors"
+   Title "Minimap -> Map Colors"
    StaticText " "
    ColorPicker "Normal Line", "ucm_color_normal"
    ColorPicker "Solid Line", "ucm_color_solid"
@@ -76,7 +79,7 @@ OptionMenu "UCMOptions_Colors"
 
 OptionMenu "UCMOptions_Switches"
 {
-   Title "UCMinimap HUD Options -> Switches"
+   Title "Minimap -> Switches"
    StaticText " "
    Slider "Switch range", "ucm_maxswitchdist", 0, 500, 1, 0
    StaticText "Maximum distance to display switches, 0 disables.","Black"
@@ -107,7 +110,7 @@ OptionMenu "UCMWaypoints"
 
 OptionMenu "UCMControls"
 {
-	Title "UCMinimap Controls"
+	Title "Minimap Controls"
 	StaticText "General"
 	Control "Toggle", "UCM_TOGGLEALL"
 	StaticText " "
@@ -127,6 +130,9 @@ OptionMenu "UCMControls"
 	Control "Pan Left" , "+UCM_PANLEFT"
 	Control "Pan Right", "+UCM_PANRIGHT"
 	StaticText " "
+	Control "Fullscreen Zoom In" , "+UCM_FSZOOMIN"
+	Control "Fullscreen Zoom Out", "+UCM_FSZOOMOUT"
+	StaticText " "
 	SubMenu "Back", "UCMOptions"
 }
 
@@ -135,7 +141,7 @@ AddOptionMenu "CustomizeControls"
 {
 	// Man this is a gross solution, i really wish there were a way to
 	// setup ini sections in MenuDef...
-	Submenu    "UCMinimap Controls"      , "UCMOptions"
+	Submenu    "Minimap Controls"      , "UCMOptions"
 	StaticText " "
 	StaticText " "
 	StaticText " "

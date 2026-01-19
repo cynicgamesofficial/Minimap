@@ -23,6 +23,7 @@
 */
 version "4.0"
 
+#include "ZScript/ucm_freeze.zsc"
 #include "ZScript/ucm_waypoints.zsc"
 #include "ZScript/ucm_minimap.zsc"
 #include "ZScript/ucm_math.zsc"

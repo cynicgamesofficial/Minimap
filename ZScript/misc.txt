@@ -1,22 +1,22 @@
 /*
-		// Stuff that doesn't work but, may in the future.
+
 		switch(ln.locknumber)
 		{
-			// Red
+
 			case 1:
 			case 4:
 			case 129:
 			case 132:
 				drawcol = 0xFFFF0000;
 			break;
-			// Yellow
+
 			case 2:
 			case 6:
 			case 131:
 			case 134:
 				drawcol = 0xFFFFFF00;
 			break;
-			// Blue
+
 			case 2:
 			case 5:
 			case 130:
@@ -25,12 +25,12 @@
 			break;
 			default:
 				drawcol = (
-					(ln.flags & Line.ML_BLOCKING) ? solid_linecol : 
+					(ln.flags & Line.ML_BLOCKING) ? solid_linecol :
 					actionable ? acton_linecol : linecol
 				);
 			break;
 		}
-		int SWITCH_ACTIONS[110] = 
+		int SWITCH_ACTIONS[110] =
 		{
 			29,103,112,111,50,113,175,61,115,114,63,116,42,196,133,135,137,136,
 			134,99,159,18,131,23,101,221,55,241,71,161,160,102,140,158,189,78,

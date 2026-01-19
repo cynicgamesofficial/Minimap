@@ -16,7 +16,20 @@ alias UCM_TOGGLEMAP "netevent \"ucm.togglemap\""
 alias UCM_TOGGLEFULLSCREEN "netevent \"ucm.togglefullscreen\""
 alias UCM_TOGGLEFULLSIZE "netevent \"ucm.togglemaxsize\""
 alias UCM_TOGGLEFOLLOW "netevent \"ucm.togglefollow\""
+alias UCM_TOGGLEOMNISCIENCE "netevent \"ucm.toggleomniscience\""
+alias +UCM_FSZOOMIN "netevent \"+ucm.fszoom.in\""
+alias +UCM_FSZOOMOUT "netevent \"+ucm.fszoom.out\""
+alias -UCM_FSZOOMIN "netevent \"-ucm.fszoom.in\""
+alias -UCM_FSZOOMOUT "netevent \"-ucm.fszoom.out\""
 
+defaultbind m UCM_TOGGLEFULLSCREEN
+defaultbind mouse3 UCM_WAYPOINTS
+defaultbind mouse4 +UCM_FSZOOMIN
+defaultbind mouse5 +UCM_FSZOOMOUT
+defaultbind uparrow +UCM_PANUP
+defaultbind downarrow +UCM_PANDOWN
+defaultbind leftarrow +UCM_PANLEFT
+defaultbind rightarrow +UCM_PANRIGHT
 
 addkeysection "Minimap Controls" UCMControls
 addmenukey "Toggle" UCM_TOGGLEALL
@@ -27,7 +40,10 @@ addmenukey "Toggle Map" UCM_TOGGLEMAP
 addmenukey "Toggle Fullscreen" UCM_TOGGLEFULLSCREEN
 addmenukey "Toggle Fullsize" UCM_TOGGLEFULLSIZE
 addmenukey "Toggle Following" UCM_TOGGLEFOLLOW
+addmenukey "Omniscience" UCM_TOGGLEOMNISCIENCE
 addmenukey "Pan Up" +UCM_PANUP
 addmenukey "Pan Down" +UCM_PANDOWN
 addmenukey "Pan Left" +UCM_PANLEFT
 addmenukey "Pan Right" +UCM_PANRIGHT
+addmenukey "Fullscreen Zoom In" +UCM_FSZOOMIN
+addmenukey "Fullscreen Zoom Out" +UCM_FSZOOMOUT
